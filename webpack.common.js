@@ -10,7 +10,7 @@ const allPartials = glob.sync(path.join(__dirname, 'src/**/!(_)*.hbs')).map((fil
 
 module.exports = {
     entry: {
-        app: './src/index.ts',
+        app: './src/app/index.ts',
     },
 
     output: {
@@ -25,7 +25,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Production',
-            template: path.resolve(__dirname, 'src', 'index.html'),
+            template: path.resolve(__dirname, './src/app', 'index.html'),
         }),
         new CleanWebpackPlugin(),
         new StyleLintPlugin({
